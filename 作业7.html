@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+
+</head>
+<head>
+
+            <form>
+           
+        
+    
+           <span id="content">Time  passed : <font color=red> 0 </font>   s</span>
+           </form>
+   
+       
+        <input type="button" onclick="changeRun();" id="btn" value="开始" />
+        <input type="button" onclick="reset();" value="重置" />
+     </body>
+    </html>
+    <script type="text/javascript">
+        var btn = document.getElementById("btn");
+        var spn = document.getElementById("content");
+        var idx = 0;
+        var run = false;
+        var interval = setInterval(function () {
+            if (run) {
+                idx += 1;
+                spn.innerHTML = idx;
+            }
+        }, 2000);
+        function changeRun() {
+            if (btn.value == '开始') {
+                btn.value = '暂停';
+                run = true;
+            } else {
+                btn.value = '开始';
+                run = false;
+            }
+        }
+        function reset() {
+            btn.value = '开始';
+            run = false;
+            idx = 0;
+            spn.innerHTML = idx;
+        }
+    </script
+</body>
+
+</html>
